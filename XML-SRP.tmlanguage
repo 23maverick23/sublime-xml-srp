@@ -79,7 +79,7 @@
 			<key>comment</key>
 			<string>Filter and conditional logic (end).</string>
 			<key>match</key>
-			<string>(?&lt;=(\s))END(?=(|\s))</string>
+			<string>(?&lt;!\w)END(?=(|\s|\n|\r))</string>
 			<key>name</key>
 			<string>constant.other.xml-srp</string>
 		</dict>
