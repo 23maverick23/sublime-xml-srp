@@ -1,0 +1,89 @@
+{
+    "name": "XML-SRP",
+    "scopeName": "text.xml",
+    "fileTypes": ["txt", "xml"],
+    "patterns": [
+        {
+            "match": "#.*",
+            "name": "comment",
+            "comment": "Comments."
+        },
+        {
+            "match": "OA_(FIELDS|CUSTOM_FIELDS|FIELDS_INITIAL_ONLY)(?=\\s)",
+            "name": "storage.type",
+            "comment": "OpenAir field declarations."
+        },
+        {
+            "match": "NS_(FIELDS|CUSTOM_FIELDS|CUSTOM_FIELDS_FROM_SO_INVOICE_HEADER|CUSTOM_FIELDS_FROM_SO_INVOICE_LINE_ITEM)(?=\\s)",
+            "name": "storage.type",
+            "comment": "OpenAir field declarations."
+        },
+        {
+            "match": "_(TODAY|REMOVE)",
+            "name": "constant.language entity.name.function",
+            "comment": "Custom syntax."
+        },
+        {
+            "match": "(<([A-Z_\/])*?>)",
+            "name": "entity.name.tag",
+            "comment": "Section header tags."
+        },
+        {
+            "name": "entity.name.tag",
+            "comment": "Value mapping.",
+            "begin": "<(\\b\\w+\\b)\\s*(\\b\\w+\\b)>",
+            "name": "entity.name.function",
+            "patterns": [
+                {
+                    "include": "$self"
+                },
+                {
+                    "name": "string",
+                    "match": "."
+                }
+            ],
+            "end": "<\\/(\\b\\w+\\b)>"
+        },
+        {
+            "name": "constant.other",
+            "comment": "Filter and conditional logic.",
+            "begin": "((FILTER|IF)\\s<<END)",
+            "patterns": [
+                {
+                    "include": "$self"
+                },
+                {
+                    "name": "string",
+                    "match": "."
+                }
+            ],
+            "end": "END"
+        },
+        {
+            "match": "(IF(?=\\s)|THEN(?=\\s)|ELSE(?=\\s)|AND(?=\\s)|OR(?=\\s))",
+            "name": "constant.other",
+            "comment": "Conditional mapping keywords."
+        },
+        {
+            "match": "(|:)lookup(.)*?(?:=)",
+            "name": "support.type variable.parameter",
+            "comment": "Lookup logic."
+        },
+        {
+            "match": "((?<=\\s)>|(?<=\\s)<(?=\\s)|=|(?<=\\s)<=|(?<=\\s)>=|(?<=\\s)<>)",
+            "name": "keyword.operator",
+            "comment": "Operators."
+        },
+        {
+            "match": "'(.)*?'",
+            "name": "string.quoted.single",
+            "comment": "String values."
+        },
+        {
+            "match": "(?<=\\s)\\d+",
+            "name": "constant.numeric",
+            "comment": "Numeric values."
+        }
+    ],
+    "uuid": "4b5be207-5b29-4085-a2da-1a7ce286775a"
+}

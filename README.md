@@ -1,0 +1,36 @@
+# XML SRP
+
+## DESCRIPTION
+A customized syntax file for aiding in the styling of Advanced Settings files in an SRP configuration.
+
+This was created mainly for use in [Sublime Text 2](http://www.sublimetext.com/2) or [TextMate](http://macromates.com/), but can likely also be used in [Notepad++](http://notepad-plus-plus.org/) with some massaging.
+
+## AUTHORS
+Ryan Morrissey - [ryancmorrissey.com](http://ryancmorrissey.com)
+
+## LICENSE
+See [LICENSE.md](LICENSE.md)
+
+## INSTALLATION
+For _Sublime Text 2_, you can install directly from git using the commands below, or manually download the `XML-SRP.tmlanguage` file from the repo and add it to your `User` folder.
+
+```bash
+# For Sublime Text 2
+cd ~/Library/Application\S upport/Sublime\ Text\ 2/Packages/User
+git clone https://rmorrissey23@bitbucket.org/rmorrissey23/xml-srp.git
+
+```
+
+For _TextMate_, download the `XML-SRP.tmlanguage` file from the repo and drag it into _TextMate_ to install.
+
+Instructions for _Notepad++_ will hopefully be added soon, as a separate file type needs to be created for _NPP_. 
+
+## DOCUMENTATION
+Advanced settings file viewed as plaintext in Monokai theme:
+![plaintext-syntax-monokai.png](plaintext-syntax-monokai.png)
+
+Advanced settings file viewed using XML-SRP syntax in Monokai theme:
+![xml-srp-syntax-monokai.png](xml-srp-syntax-monokai.png)
+
+## HISTORY
+Current Version: 1.0

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>txt</string>
+		<string>xml</string>
+	</array>
+	<key>name</key>
+	<string>XML-SRP</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>comment</key>
+			<string>Comments.</string>
+			<key>match</key>
+			<string>#.*</string>
+			<key>name</key>
+			<string>comment</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>OpenAir field declarations.</string>
+			<key>match</key>
+			<string>OA_(FIELDS|CUSTOM_FIELDS|FIELDS_INITIAL_ONLY)(?=\s)</string>
+			<key>name</key>
+			<string>storage.type</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>OpenAir field declarations.</string>
+			<key>match</key>
+			<string>NS_(FIELDS|CUSTOM_FIELDS|CUSTOM_FIELDS_FROM_SO_INVOICE_HEADER|CUSTOM_FIELDS_FROM_SO_INVOICE_LINE_ITEM)(?=\s)</string>
+			<key>name</key>
+			<string>storage.type</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Custom syntax.</string>
+			<key>match</key>
+			<string>_(TODAY|REMOVE)</string>
+			<key>name</key>
+			<string>constant.language entity.name.function</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Section header tags.</string>
+			<key>match</key>
+			<string>(&lt;([A-Z_/])*?&gt;)</string>
+			<key>name</key>
+			<string>entity.name.tag</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>&lt;(\b\w+\b)\s*(\b\w+\b)&gt;</string>
+			<key>comment</key>
+			<string>Value mapping.</string>
+			<key>end</key>
+			<string>&lt;\/(\b\w+\b)&gt;</string>
+			<key>name</key>
+			<string>entity.name.function</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>.</string>
+					<key>name</key>
+					<string>string</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>((FILTER|IF)\s&lt;&lt;END)</string>
+			<key>comment</key>
+			<string>Filter and conditional logic.</string>
+			<key>end</key>
+			<string>END</string>
+			<key>name</key>
+			<string>constant.other</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>.</string>
+					<key>name</key>
+					<string>string</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Conditional mapping keywords.</string>
+			<key>match</key>
+			<string>(IF(?=\s)|THEN(?=\s)|ELSE(?=\s)|AND(?=\s)|OR(?=\s))</string>
+			<key>name</key>
+			<string>constant.other</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Lookup logic.</string>
+			<key>match</key>
+			<string>(|:)lookup(.)*?(?:=)</string>
+			<key>name</key>
+			<string>support.type variable.parameter</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Operators.</string>
+			<key>match</key>
+			<string>((?&lt;=\s)&gt;|(?&lt;=\s)&lt;(?=\s)|=|(?&lt;=\s)&lt;=|(?&lt;=\s)&gt;=|(?&lt;=\s)&lt;&gt;)</string>
+			<key>name</key>
+			<string>keyword.operator</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>String values.</string>
+			<key>match</key>
+			<string>'(.)*?'</string>
+			<key>name</key>
+			<string>string.quoted.single</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Numeric values.</string>
+			<key>match</key>
+			<string>(?&lt;=\s)\d+</string>
+			<key>name</key>
+			<string>constant.numeric</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>text.xml</string>
+	<key>uuid</key>
+	<string>4b5be207-5b29-4085-a2da-1a7ce286775a</string>
+</dict>
+</plist>
