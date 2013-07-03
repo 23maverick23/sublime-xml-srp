@@ -32,7 +32,7 @@ Advanced settings file viewed as plaintext in Monokai theme:
 
 Advanced settings file viewed using XML-SRP syntax in Monokai theme:
 
-![xml-srp-syntax-monokai.png](https://bitbucket.org/rmorrissey23/xml-srp/raw/b91238b8e24f2c284fbbe4ae563cf0925b661462/archive/xml-srp-syntax-monokai.png)
+![xml-srp-syntax-monokai.png](https://bitbucket.org/rmorrissey23/xml-srp/raw/27bde563088f97b2dcda49f969b680bfeed0bb11/archive/xml-srp-syntax-monokai.png)
 
 ## HISTORY
 Current Version: 1.0
