@@ -17,7 +17,7 @@ For _Sublime Text 2_, you can install directly from git using the commands below
 ```bash
 # For Sublime Text 2
 cd ~/Library/Application\S upport/Sublime\ Text\ 2/Packages/User
-git clone https://rmorrissey23@bitbucket.org/rmorrissey23/xml-srp.git
+git clone https://rmorrissey23@bitbucket.org/rmorrissey23/xml-srp.git XML-SRP
 
 ```
 
@@ -27,10 +27,12 @@ Instructions for _Notepad++_ will hopefully be added soon, as a separate file ty
 
 ## DOCUMENTATION
 Advanced settings file viewed as plaintext in Monokai theme:
-![plaintext-syntax-monokai.png](plaintext-syntax-monokai.png)
+
+![plaintext-syntax-monokai.png](https://bitbucket.org/rmorrissey23/xml-srp/raw/b91238b8e24f2c284fbbe4ae563cf0925b661462/archive/plaintext-syntax-monokai.png)
 
 Advanced settings file viewed using XML-SRP syntax in Monokai theme:
-![xml-srp-syntax-monokai.png](xml-srp-syntax-monokai.png)
+
+![xml-srp-syntax-monokai.png](https://bitbucket.org/rmorrissey23/xml-srp/raw/b91238b8e24f2c284fbbe4ae563cf0925b661462/archive/xml-srp-syntax-monokai.png)
 
 ## HISTORY
 Current Version: 1.0
