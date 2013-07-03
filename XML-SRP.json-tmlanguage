@@ -5,83 +5,72 @@
     "patterns": [
         {
             "match": "#.*",
-            "name": "comment",
+            "name": "comment.xml-srp",
             "comment": "Comments."
         },
         {
             "match": "OA_(FIELDS|CUSTOM_FIELDS|FIELDS_INITIAL_ONLY)(?=\\s)",
-            "name": "storage.type",
+            "name": "storage.type.xml-srp",
             "comment": "OpenAir field declarations."
         },
         {
             "match": "NS_(FIELDS|CUSTOM_FIELDS|CUSTOM_FIELDS_FROM_SO_INVOICE_HEADER|CUSTOM_FIELDS_FROM_SO_INVOICE_LINE_ITEM)(?=\\s)",
-            "name": "storage.type",
+            "name": "storage.type.xml-srp",
             "comment": "OpenAir field declarations."
         },
         {
             "match": "_(TODAY|REMOVE)",
-            "name": "constant.language entity.name.function",
+            "name": "constant.language.xml-srp entity.name.function.xml-srp",
             "comment": "Custom syntax."
         },
         {
             "match": "(<([A-Z_\/])*?>)",
-            "name": "entity.name.tag",
+            "name": "entity.name.tag.xml-srp",
             "comment": "Section header tags."
         },
         {
-            "name": "entity.name.tag",
-            "comment": "Value mapping.",
-            "begin": "<(\\b\\w+\\b)\\s*(\\b\\w+\\b)>",
-            "name": "entity.name.function",
-            "patterns": [
-                {
-                    "include": "$self"
-                },
-                {
-                    "name": "string",
-                    "match": "."
-                }
-            ],
-            "end": "<\\/(\\b\\w+\\b)>"
+            "match": "<(\\b\\w+\\b)\\s*(\\b\\w+\\b)>",
+            "name": "entity.name.function.xml-srp",
+            "comment": "Value pair mapping (start)."
         },
         {
-            "name": "constant.other",
-            "comment": "Filter and conditional logic.",
-            "begin": "((FILTER|IF)\\s<<END)",
-            "patterns": [
-                {
-                    "include": "$self"
-                },
-                {
-                    "name": "string",
-                    "match": "."
-                }
-            ],
-            "end": "END"
+            "match": "<\\/(\\b\\w+\\b)>",
+            "name": "entity.name.function.xml-srp",
+            "comment": "Value pair mapping (end)."
+        },
+        {
+            "match": "((FILTER|IF)\\s<<END)",
+            "name": "constant.other.xml-srp",
+            "comment": "Filter and conditional logic (start)."
+        },
+        {
+            "match": "(?<=\\s)END(?=\\s)",
+            "name": "constant.other.xml-srp",
+            "comment": "Filter and conditional logic (end)."
         },
         {
             "match": "(IF(?=\\s)|THEN(?=\\s)|ELSE(?=\\s)|AND(?=\\s)|OR(?=\\s))",
-            "name": "constant.other",
+            "name": "constant.other.xml-srp",
             "comment": "Conditional mapping keywords."
         },
         {
             "match": "(|:)lookup(.)*?(?:=)",
-            "name": "support.type variable.parameter",
+            "name": "support.type.xml-srp variable.parameter.xml-srp",
             "comment": "Lookup logic."
         },
         {
             "match": "((?<=\\s)>|(?<=\\s)<(?=\\s)|=|(?<=\\s)<=|(?<=\\s)>=|(?<=\\s)<>)",
-            "name": "keyword.operator",
+            "name": "keyword.operator.xml-srp",
             "comment": "Operators."
         },
         {
             "match": "'(.)*?'",
-            "name": "string.quoted.single",
+            "name": "string.quoted.single.xml-srp",
             "comment": "String values."
         },
         {
             "match": "(?<=\\s)\\d+",
-            "name": "constant.numeric",
+            "name": "constant.numeric.xml-srp",
             "comment": "Numeric values."
         }
     ],
