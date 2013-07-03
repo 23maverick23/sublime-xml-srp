@@ -72,6 +72,11 @@
             "match": "(?<=\\s)\\d+",
             "name": "constant.numeric.xml-srp",
             "comment": "Numeric values."
+        },
+        {
+            "match": "(“|”|‘|`)",
+            "name": "invalid.xml-srp",
+            "comment": "Invalid characters."
         }
     ],
     "uuid": "4b5be207-5b29-4085-a2da-1a7ce286775a"

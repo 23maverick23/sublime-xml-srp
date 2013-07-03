@@ -123,6 +123,14 @@
 			<key>name</key>
 			<string>constant.numeric.xml-srp</string>
 		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Invalid characters.</string>
+			<key>match</key>
+			<string>(“|”|‘|`)</string>
+			<key>name</key>
+			<string>invalid.xml-srp</string>
+		</dict>
 	</array>
 	<key>scopeName</key>
 	<string>text.xml</string>
