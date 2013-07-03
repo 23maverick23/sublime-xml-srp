@@ -44,7 +44,7 @@
             "comment": "Filter and conditional logic (start)."
         },
         {
-            "match": "END(?=\\s)",
+            "match": "(?<=(\\s))END(?=(|\\s))",
             "name": "constant.other.xml-srp",
             "comment": "Filter and conditional logic (end)."
         },
