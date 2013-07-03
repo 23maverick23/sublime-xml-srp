@@ -28,7 +28,7 @@ Instructions for _Notepad++_ will hopefully be added soon, as a separate file ty
 ## DOCUMENTATION
 Advanced settings file viewed as plaintext in Monokai theme:
 
-![plaintext-syntax-monokai.png](https://bitbucket.org/rmorrissey23/xml-srp/downloads/plaintext-syntax-monokai.png)
+![plaintext-syntax-monokai.png](https://bitbucket.org/rmorrissey23/xml-srp/raw/c002f6522b0adc1b09341b293a406695e60700ac/archive/plaintext-syntax-monokai.png)
 
 Advanced settings file viewed using XML-SRP syntax in Monokai theme:
 
