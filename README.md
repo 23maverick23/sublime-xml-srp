@@ -12,11 +12,11 @@ Ryan Morrissey - [ryancmorrissey.com](http://ryancmorrissey.com)
 See [LICENSE.md](LICENSE.md)
 
 ## INSTALLATION
-For _Sublime Text 2_, you can install directly from git using the commands below, or manually download the `XML-SRP.tmlanguage` file from the repo and add it to your `User` folder.
+For _Sublime Text 2_, you can install directly from git, or manually download the `XML-SRP.tmlanguage` file from the repo and add it to your `User` folder.
 
 ```bash
-# For Sublime Text 2
-cd ~/Library/Application\S upport/Sublime\ Text\ 2/Packages/User
+# For Sublime Text 2 on Mac/OSX
+cd ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User
 git clone https://rmorrissey23@bitbucket.org/rmorrissey23/xml-srp.git XML-SRP
 
 ```
@@ -28,11 +28,11 @@ Instructions for _Notepad++_ will hopefully be added soon, as a separate file ty
 ## DOCUMENTATION
 Advanced settings file viewed as plaintext in Monokai theme:
 
-![plaintext-syntax-monokai.png](https://bitbucket.org/rmorrissey23/xml-srp/raw/c002f6522b0adc1b09341b293a406695e60700ac/archive/plaintext-syntax-monokai.png)
+![plaintext-syntax-monokai.png](https://bitbucket.org/rmorrissey23/xml-srp/raw/master/archive/plaintext-syntax-monokai.png)
 
 Advanced settings file viewed using XML-SRP syntax in Monokai theme:
 
-![xml-srp-syntax-monokai.png](https://bitbucket.org/rmorrissey23/xml-srp/raw/27bde563088f97b2dcda49f969b680bfeed0bb11/archive/xml-srp-syntax-monokai.png)
+![xml-srp-syntax-monokai.png](https://bitbucket.org/rmorrissey23/xml-srp/raw/master/archive/xml-srp-syntax-monokai.png)
 
 ## HISTORY
 Current Version: 1.0
