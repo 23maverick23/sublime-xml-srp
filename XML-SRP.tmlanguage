@@ -4,8 +4,10 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
+		<string>xml-srp</string>
 		<string>txt</string>
 		<string>xml</string>
+		<string>html</string>
 	</array>
 	<key>name</key>
 	<string>XML-SRP</string>

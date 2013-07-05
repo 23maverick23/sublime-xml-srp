@@ -1,7 +1,7 @@
 {
     "name": "XML-SRP",
     "scopeName": "text.xml",
-    "fileTypes": ["txt", "xml"],
+    "fileTypes": ["xml-srp", "txt", "xml", "html"],
     "patterns": [
         {
             "match": "#.*",
