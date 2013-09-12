@@ -49,7 +49,7 @@
 			<key>comment</key>
 			<string>Section header tags.</string>
 			<key>match</key>
-			<string>(&lt;([A-Z_/])*?&gt;)</string>
+			<string>&lt;[A-Z0-9_/]+&gt;</string>
 			<key>name</key>
 			<string>entity.name.tag.xml-srp</string>
 		</dict>
@@ -57,7 +57,7 @@
 			<key>comment</key>
 			<string>Value pair mapping (start).</string>
 			<key>match</key>
-			<string>&lt;(\b\w+\b)\s*(\b\w+\b)&gt;</string>
+			<string>&lt;(\b\w+\b)\s*?(\b\w+\b)&gt;</string>
 			<key>name</key>
 			<string>entity.name.function.xml-srp</string>
 		</dict>

@@ -1,83 +1,88 @@
 {
-    "name": "XML-SRP",
-    "scopeName": "text.xml",
-    "fileTypes": ["xml-srp", "txt", "xml", "html"],
     "patterns": [
         {
-            "match": "#.*",
-            "name": "comment.xml-srp",
-            "comment": "Comments."
-        },
+            "comment": "Comments.", 
+            "name": "comment.xml-srp", 
+            "match": "#.*"
+        }, 
         {
-            "match": "OA_(FIELDS|CUSTOM_FIELDS|FIELDS_INITIAL_ONLY)(?=\\s)",
-            "name": "storage.type.xml-srp",
-            "comment": "OpenAir field declarations."
-        },
+            "comment": "OpenAir field declarations.", 
+            "name": "storage.type.xml-srp", 
+            "match": "OA_(FIELDS|CUSTOM_FIELDS|FIELDS_INITIAL_ONLY)(?=\\s)"
+        }, 
         {
-            "match": "NS_(FIELDS|CUSTOM_FIELDS|CUSTOM_FIELDS_FROM_SO_INVOICE_HEADER|CUSTOM_FIELDS_FROM_SO_INVOICE_LINE_ITEM)(?=\\s)",
-            "name": "storage.type.xml-srp",
-            "comment": "OpenAir field declarations."
-        },
+            "comment": "OpenAir field declarations.", 
+            "name": "storage.type.xml-srp", 
+            "match": "NS_(FIELDS|CUSTOM_FIELDS|CUSTOM_FIELDS_FROM_SO_INVOICE_HEADER|CUSTOM_FIELDS_FROM_SO_INVOICE_LINE_ITEM)(?=\\s)"
+        }, 
         {
-            "match": "_(TODAY|REMOVE)",
-            "name": "constant.language.xml-srp entity.name.function.xml-srp",
-            "comment": "Custom syntax."
-        },
+            "comment": "Custom syntax.", 
+            "name": "constant.language.xml-srp entity.name.function.xml-srp", 
+            "match": "_(TODAY|REMOVE)"
+        }, 
         {
-            "match": "(<([A-Z_\/])*?>)",
-            "name": "entity.name.tag.xml-srp",
-            "comment": "Section header tags."
-        },
+            "comment": "Section header tags.", 
+            "name": "entity.name.tag.xml-srp", 
+            "match": "<[A-Z0-9_/]+>"
+        }, 
         {
-            "match": "<(\\b\\w+\\b)\\s*(\\b\\w+\\b)>",
-            "name": "entity.name.function.xml-srp",
-            "comment": "Value pair mapping (start)."
-        },
+            "comment": "Value pair mapping (start).", 
+            "name": "entity.name.function.xml-srp", 
+            "match": "<(\\b\\w+\\b)\\s*?(\\b\\w+\\b)>"
+        }, 
         {
-            "match": "<\\/(\\b\\w+\\b)>",
-            "name": "entity.name.function.xml-srp",
-            "comment": "Value pair mapping (end)."
-        },
+            "comment": "Value pair mapping (end).", 
+            "name": "entity.name.function.xml-srp", 
+            "match": "<\\/(\\b\\w+\\b)>"
+        }, 
         {
-            "match": "((FILTER|IF)\\s<<END)",
-            "name": "constant.other.xml-srp",
-            "comment": "Filter and conditional logic (start)."
-        },
+            "comment": "Filter and conditional logic (start).", 
+            "name": "constant.other.xml-srp", 
+            "match": "((FILTER|IF)\\s<<END)"
+        }, 
         {
-            "match": "(?<!\\w)END(?=(|\\s|\\n|\\r))",
-            "name": "constant.other.xml-srp",
-            "comment": "Filter and conditional logic (end)."
-        },
+            "comment": "Filter and conditional logic (end).", 
+            "name": "constant.other.xml-srp", 
+            "match": "(?<!\\w)END(?=(|\\s|\\n|\\r))"
+        }, 
         {
-            "match": "(IF(?=\\s)|THEN(?=\\s)|ELSE(?=\\s)|AND(?=\\s)|OR(?=\\s))",
-            "name": "constant.other.xml-srp",
-            "comment": "Conditional mapping keywords."
-        },
+            "comment": "Conditional mapping keywords.", 
+            "name": "constant.other.xml-srp", 
+            "match": "(IF(?=\\s)|THEN(?=\\s)|ELSE(?=\\s)|AND(?=\\s)|OR(?=\\s))"
+        }, 
         {
-            "match": "(|:)lookup(.)*?(?:=)",
-            "name": "support.type.xml-srp variable.parameter.xml-srp",
-            "comment": "Lookup logic."
-        },
+            "comment": "Lookup logic.", 
+            "name": "support.type.xml-srp variable.parameter.xml-srp", 
+            "match": "(|:)lookup(.)*?(?:=)"
+        }, 
         {
-            "match": "((?<=\\s)>|(?<=\\s)<(?=\\s)|=|(?<=\\s)<=|(?<=\\s)>=|(?<=\\s)<>)",
-            "name": "keyword.operator.xml-srp",
-            "comment": "Operators."
-        },
+            "comment": "Operators.", 
+            "name": "keyword.operator.xml-srp", 
+            "match": "((?<=\\s)>|(?<=\\s)<(?=\\s)|=|(?<=\\s)<=|(?<=\\s)>=|(?<=\\s)<>)"
+        }, 
         {
-            "match": "'(.)*?'",
-            "name": "string.quoted.single.xml-srp",
-            "comment": "String values."
-        },
+            "comment": "String values.", 
+            "name": "string.quoted.single.xml-srp", 
+            "match": "'(.)*?'"
+        }, 
         {
-            "match": "(?<=\\s)\\d+",
-            "name": "constant.numeric.xml-srp",
-            "comment": "Numeric values."
-        },
+            "comment": "Numeric values.", 
+            "name": "constant.numeric.xml-srp", 
+            "match": "(?<=\\s)\\d+"
+        }, 
         {
-            "match": "(“|”|‘|`)",
-            "name": "invalid.xml-srp",
-            "comment": "Invalid characters."
+            "comment": "Invalid characters.", 
+            "name": "invalid.xml-srp", 
+            "match": "(\u201c|\u201d|\u2018|`)"
         }
-    ],
-    "uuid": "4b5be207-5b29-4085-a2da-1a7ce286775a"
+    ], 
+    "scopeName": "text.xml", 
+    "fileTypes": [
+        "xml-srp", 
+        "txt", 
+        "xml", 
+        "html"
+    ], 
+    "uuid": "4b5be207-5b29-4085-a2da-1a7ce286775a", 
+    "name": "XML-SRP"
 }
