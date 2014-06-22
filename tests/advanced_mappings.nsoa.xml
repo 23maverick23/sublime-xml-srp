@@ -3,6 +3,7 @@
         OA_FIELDS web,email,countries,notes
         OA_CUSTOM_FIELDS countries
         OA_FIELDS_INITIAL_ONLY web,email
+        OA_CUSTOM_FIELDS_INITIAL_ONLY countries
         NS_FIELDS url,email,memo,custentity36
         NS_CUSTOM_FIELDS custentity36
 
@@ -27,8 +28,11 @@
 
         # Use this mapping to set the extended category
         category_3_id lookup=department:lookup_table=category_3:lookup_by=ns_dep_id:lookup_return=id
-        start_date _REMOVE
+        start_date _TODAY
         end_date _REMOVE
+
+        # invalid characters are highlighted
+        notes “this is badly formatted”
     </PROJECT_BILLING_RULE_TIME>
 </PULL>
 
@@ -41,8 +45,23 @@
 
         FILTER <<END
             number >= '286'
-        END                     
+        END
     </INVOICE_TO_INVOICE>
+
+    <INVOICE_LINE_TIME_GROUP_BY>
+        OA_FIELDS user_id,notes,hour,date,total,rate,id
+        NS_FIELDS description
+        OA_FIELDS_GROUP_BY id
+        OA_FIELDS_SORT_BY user.name
+
+        description 'Name:', lookup=user_id:lookup_table=user:lookup_by=id:lookup_return=name, '\\nDate:', date, '\\nHours:', hour, '\\nRate:', rate, '\\nNotes:', notes, '\\nAmount:', total, '\\n\\n\\n'
+    </INVOICE_LINE_TIME_GROUP_BY>
+
+    <EXPENSE_REP_TO_EXPENSE_REP>
+        OA_FIELDS user_id
+
+        FILTER <<END
+            (user.do_not_export_envelope <> '1')
+        END
+    </EXPENSE_REP_TO_EXPENSE_REP>
 </PUSH>
-
-

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>fileTypes</key>
+    <array>
+        <string>nsoa.xml</string>
+        <string>nsoa.txt</string>
+    </array>
+    <key>firstLineMatch</key>
+    <string>^&lt;\?xml </string>
+    <key>foldingStartMarker</key>
+    <string>^\s*(&lt;[^!?%/](?!.+?(/&gt;|&lt;/.+?&gt;))|&lt;[!%]--(?!.+?--%?&gt;)|&lt;%[!]?(?!.+?%&gt;))</string>
+    <key>foldingStopMarker</key>
+    <string>^\s*(&lt;/[^&gt;]+&gt;|[/%]&gt;|--&gt;)\s*$</string>
+    <key>keyEquivalent</key>
+    <string>^~X</string>
+    <key>name</key>
+    <string>XML (NSOA)</string>
+    <key>patterns</key>
+    <array>
+        <dict>
+            <key>comment</key>
+            <string>Comments.</string>
+            <key>match</key>
+            <string>#.*</string>
+            <key>name</key>
+            <string>comment.xml.nsoa</string>
+        </dict>
+        <dict>
+            <key>comment</key>
+            <string>OpenAir field declarations.</string>
+            <key>match</key>
+            <string>OA_(FIELDS(|_(SORT|GROUP)_BY|_INITIAL_ONLY)|CUSTOM(_FIELDS(|_INITIAL_ONLY)))(?=\s)</string>
+            <key>name</key>
+            <string>storage.type.xml.nsoa</string>
+        </dict>
+        <dict>
+            <key>comment</key>
+            <string>NetSuite field declarations.</string>
+            <key>match</key>
+            <string>NS_(FIELDS|CUSTOM_FIELDS(|_FROM_SO_INVOICE_(HEADER|LINE_ITEM)))(?=\s)</string>
+            <key>name</key>
+            <string>storage.type.xml.nsoa</string>
+        </dict>
+        <dict>
+            <key>comment</key>
+            <string>Custom syntax.</string>
+            <key>match</key>
+            <string>_(TODAY|REMOVE)</string>
+            <key>name</key>
+            <string>entity.name.type.class.xml.nsoa</string>
+        </dict>
+        <dict>
+            <key>comment</key>
+            <string>Section header tags.</string>
+            <key>match</key>
+            <string>&lt;[A-Z0-9_/]+&gt;</string>
+            <key>name</key>
+            <string>entity.name.tag.xml.nsoa</string>
+        </dict>
+        <dict>
+            <key>comment</key>
+            <string>Value pair mapping (start).</string>
+            <key>match</key>
+            <string>&lt;(\b\w+\b)\s*?(\b\w+\b)&gt;</string>
+            <key>name</key>
+            <string>entity.name.function.xml.nsoa</string>
+        </dict>
+        <dict>
+            <key>comment</key>
+            <string>Value pair mapping (end).</string>
+            <key>match</key>
+            <string>&lt;\/(\b\w+\b)&gt;</string>
+            <key>name</key>
+            <string>entity.name.function.xml.nsoa</string>
+        </dict>
+        <dict>
+            <key>comment</key>
+            <string>Filter and conditional logic (start).</string>
+            <key>match</key>
+            <string>((FILTER|IF)\s&lt;&lt;END)</string>
+            <key>name</key>
+            <string>entity.name.function.xml.nsoa</string>
+        </dict>
+        <dict>
+            <key>comment</key>
+            <string>Filter and conditional logic (end).</string>
+            <key>match</key>
+            <string>(?&lt;!\w)END$</string>
+            <key>name</key>
+            <string>entity.name.function.xml.nsoa</string>
+        </dict>
+        <dict>
+            <key>comment</key>
+            <string>Conditional mapping keywords.</string>
+            <key>match</key>
+            <string>(IF(?=\s)|THEN(?=\s)|ELSE(?=\s)|AND(?=\s)|OR(?=\s))</string>
+            <key>name</key>
+            <string>entity.name.function.xml.nsoa</string>
+        </dict>
+        <dict>
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>variable.parameter.xml.nsoa</string>
+                </dict>
+                <key>2</key>
+                <dict>
+                    <key>name</key>
+                    <string>variable.parameter.xml.nsoa</string>
+                </dict>
+                <key>3</key>
+                <dict>
+                    <key>name</key>
+                    <string>variable.parameter.xml.nsoa</string>
+                </dict>
+                <key>4</key>
+                <dict>
+                    <key>name</key>
+                    <string>variable.parameter.xml.nsoa</string>
+                </dict>
+            </dict>
+            <key>comment</key>
+            <string>Field lookup logic.</string>
+            <key>match</key>
+            <string>(?&lt;=\s)(lookup=)(?:\w+:)(lookup_table=)(?:\w+:)(lookup_by=)(?:\w+:)(lookup_return=)(?:\w+)</string>
+            <key>name</key>
+            <string>text.xml.nsoa</string>
+        </dict>
+        <dict>
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>entity.name.type.class.xml.nsoa</string>
+                </dict>
+            </dict>
+            <key>comment</key>
+            <string>Related table lookup.</string>
+            <key>match</key>
+            <string>[^\@\w](?:(\w+)\.(\w+))</string>
+            <key>name</key>
+            <string>text.xml.nsoa</string>
+        </dict>
+        <dict>
+            <key>comment</key>
+            <string>Operators.</string>
+            <key>match</key>
+            <string>((?&lt;=\s)&gt;|(?&lt;=\s)&lt;(?=\s)|=|(?&lt;=\s)&lt;=|(?&lt;=\s)&gt;=|(?&lt;=\s)&lt;&gt;)</string>
+            <key>name</key>
+            <string>keyword.operator.xml.nsoa</string>
+        </dict>
+        <dict>
+            <key>comment</key>
+            <string>String values.</string>
+            <key>match</key>
+            <string>'(.)*?'</string>
+            <key>name</key>
+            <string>string.quoted.single.xml.nsoa</string>
+        </dict>
+        <dict>
+            <key>comment</key>
+            <string>Numeric values.</string>
+            <key>match</key>
+            <string>(?&lt;=\s)\d+</string>
+            <key>name</key>
+            <string>constant.numeric.xml.nsoa</string>
+        </dict>
+        <dict>
+            <key>comment</key>
+            <string>Escaped characters.</string>
+            <key>match</key>
+            <string>(\\n)|(\\r)|(\\t)</string>
+            <key>name</key>
+            <string>constant.character.escape.xml.nsoa</string>
+        </dict>
+        <dict>
+            <key>comment</key>
+            <string>Invalid characters.</string>
+            <key>match</key>
+            <string>[ -⁯]</string>
+            <key>name</key>
+            <string>invalid.xml.nsoa</string>
+        </dict>
+    </array>
+    <key>scopeName</key>
+    <string>text.xml.nsoa</string>
+    <key>uuid</key>
+    <string>4b5be207-5b29-4085-a2da-1a7ce286775a</string>
+</dict>
+</plist>

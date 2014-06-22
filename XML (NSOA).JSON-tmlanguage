@@ -1,0 +1,119 @@
+{
+    "fileTypes": [
+        "nsoa.xml",
+        "nsoa.txt"
+    ],
+    "firstLineMatch": "^<\\?xml ",
+    "foldingStartMarker": "^\\s*(<[^!?%/](?!.+?(/>|</.+?>))|<[!%]--(?!.+?--%?>)|<%[!]?(?!.+?%>))",
+    "foldingStopMarker": "^\\s*(</[^>]+>|[/%]>|-->)\\s*$",
+    "keyEquivalent": "^~X",
+    "name": "XML (NSOA)",
+    "patterns": [
+        {
+            "comment": "Comments.",
+            "name": "comment.xml.nsoa",
+            "match": "#.*"
+        },
+        {
+            "comment": "OpenAir field declarations.",
+            "name": "storage.type.xml.nsoa",
+            "match": "OA_(FIELDS(|_(SORT|GROUP)_BY|_INITIAL_ONLY)|CUSTOM(_FIELDS(|_INITIAL_ONLY)))(?=\\s)"
+        },
+        {
+            "comment": "NetSuite field declarations.",
+            "name": "storage.type.xml.nsoa",
+            "match": "NS_(FIELDS|CUSTOM_FIELDS(|_FROM_SO_INVOICE_(HEADER|LINE_ITEM)))(?=\\s)"
+        },
+        {
+            "comment": "Custom syntax.",
+            "name": "entity.name.type.class.xml.nsoa",
+            "match": "_(TODAY|REMOVE)"
+        },
+        {
+            "comment": "Section header tags.",
+            "name": "entity.name.tag.xml.nsoa",
+            "match": "<[A-Z0-9_/]+>"
+        },
+        {
+            "comment": "Value pair mapping (start).",
+            "name": "entity.name.function.xml.nsoa",
+            "match": "<(\\b\\w+\\b)\\s*?(\\b\\w+\\b)>"
+        },
+        {
+            "comment": "Value pair mapping (end).",
+            "name": "entity.name.function.xml.nsoa",
+            "match": "<\\/(\\b\\w+\\b)>"
+        },
+        {
+            "comment": "Filter and conditional logic (start).",
+            "name": "entity.name.function.xml.nsoa",
+            "match": "((FILTER|IF)\\s<<END)"
+        },
+        {
+            "comment": "Filter and conditional logic (end).",
+            "name": "entity.name.function.xml.nsoa",
+            "match": "(?<!\\w)END$"
+        },
+        {
+            "comment": "Conditional mapping keywords.",
+            "name": "entity.name.function.xml.nsoa",
+            "match": "(IF(?=\\s)|THEN(?=\\s)|ELSE(?=\\s)|AND(?=\\s)|OR(?=\\s))"
+        },
+        {
+            "comment": "Field lookup logic.",
+            "captures": {
+                "1": {
+                    "name": "variable.parameter.xml.nsoa"
+                },
+                "2": {
+                    "name": "variable.parameter.xml.nsoa"
+                },
+                "3": {
+                    "name": "variable.parameter.xml.nsoa"
+                },
+                "4": {
+                    "name": "variable.parameter.xml.nsoa"
+                }
+            },
+            "match": "(?<=\\s)(lookup=)(?:\\w+:)(lookup_table=)(?:\\w+:)(lookup_by=)(?:\\w+:)(lookup_return=)(?:\\w+)",
+            "name": "text.xml.nsoa"
+        },
+        {
+            "comment": "Related table lookup.",
+            "captures": {
+                "1": {
+                    "name": "entity.name.type.class.xml.nsoa"
+                }
+            },
+            "match": "[^\\@\\w](?:(\\w+)\\.(\\w+))",
+            "name": "text.xml.nsoa"
+        },
+        {
+            "comment": "Operators.",
+            "name": "keyword.operator.xml.nsoa",
+            "match": "((?<=\\s)>|(?<=\\s)<(?=\\s)|=|(?<=\\s)<=|(?<=\\s)>=|(?<=\\s)<>)"
+        },
+        {
+            "comment": "String values.",
+            "name": "string.quoted.single.xml.nsoa",
+            "match": "'(.)*?'"
+        },
+        {
+            "comment": "Numeric values.",
+            "name": "constant.numeric.xml.nsoa",
+            "match": "(?<=\\s)\\d+"
+        },
+        {
+            "comment": "Escaped characters.",
+            "name": "constant.character.escape.xml.nsoa",
+            "match": "(\\\\n)|(\\\\r)|(\\\\t)"
+        },
+        {
+            "comment": "Invalid characters.",
+            "name": "invalid.xml.nsoa",
+            "match": "[\u2000-\u206F]"
+        }
+    ],
+    "scopeName": "text.xml.nsoa",
+    "uuid": "4b5be207-5b29-4085-a2da-1a7ce286775a"
+}

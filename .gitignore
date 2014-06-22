@@ -1,0 +1,6 @@
+# MacOS files
+.DS_Store
+
+# Sublime Text related files
+Sublime/
+package-metadata.json
